@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -49,19 +49,51 @@
                     <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
+                            <ul class="nav navbar-nav">
+                                <li><a runat="server" href="~/About">Frame Data</a></li>
+                                <li><a runat="server" href="~/Contact">Guides</a></li>
+
+                                <asp:Menu ID="anonMenu" runat="server" Orientation="Horizontal">
+                                    <Items>
+                                        <asp:MenuItem Text="Frame Data" Value="Frame Data"></asp:MenuItem>
+                                        <asp:MenuItem Text="Guides" Value="Guides">
+                                            <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
+                                            <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>
+                                            <asp:MenuItem Text="Character" Value="Character"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Ranks" Value="Ranks"></asp:MenuItem>
+                                    </Items>
+                                </asp:Menu>
+                            </ul>
+
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
+                            <ul class="nav navbar-nav">
+                                <li><a runat="server" href="~/About">Frame Data</a></li>
+                                <li><a runat="server" href="~/Contact">Guides</a></li>
+
+                                <asp:Menu ID="loggedInMenu" runat="server" Orientation="Horizontal">
+                                    <Items>
+                                        <asp:MenuItem Text="Frame Data" Value="Frame Data"></asp:MenuItem>
+                                        <asp:MenuItem Text="Guides" Value="Guides">
+                                            <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
+                                            <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>
+                                            <asp:MenuItem Text="Character" Value="Character"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Ranks" Value="Ranks"></asp:MenuItem>
+                                        <asp:MenuItem Text="Statistics" Value="Statistics"></asp:MenuItem>
+                                        <asp:MenuItem Text="Notes" Value="Notes"></asp:MenuItem>
+                                        
+                                    </Items>
+                                </asp:Menu>
+                            </ul>
+
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
@@ -71,6 +103,7 @@
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </div>
+
             </div>
         </div>
         <div class="container body-content">
