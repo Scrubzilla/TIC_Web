@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="Content/Styling.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -39,23 +39,22 @@
         </asp:ScriptManager>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
+
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a runat="server" href="~/Default">
+                        <asp:Image ID="Logo" runat="server" ImageUrl="~/Images/Logo.png" CssClass="logoImage" Height="50px" AlternateText="TIC Logo" />
+                    </a>
                 </div>
+
                 <div class="navbar-collapse collapse">
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav">
-                                <li><a runat="server" href="~/About">Frame Data</a></li>
-                                <li><a runat="server" href="~/Contact">Guides</a></li>
-
-                                <asp:Menu ID="anonMenu" runat="server" Orientation="Horizontal">
+                                <asp:Menu ID="anonMenu" runat="server" Orientation="Horizontal" StaticHoverStyle-CssClass="mainStaticHover" StaticMenuStyle-CssClass="mainStatic" DynamicHoverStyle-CssClass="menuDynamicHover" DynamicMenuStyle-CssClass="menuDyn" DynamicMenuItemStyle-CssClass="menuDynItem" StaticMenuItemStyle-CssClass="menuStatItem" StaticMenuItemStyle-HorizontalPadding="12px" StaticMenuItemStyle-VerticalPadding="15px">
+                                    <DynamicHoverStyle CssClass="menuDynamicHover" />
+                                    <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
+                                    <DynamicMenuStyle CssClass="menuDyn" />
                                     <Items>
                                         <asp:MenuItem Text="Frame Data" Value="Frame Data"></asp:MenuItem>
                                         <asp:MenuItem Text="Guides" Value="Guides">
@@ -65,6 +64,10 @@
                                         </asp:MenuItem>
                                         <asp:MenuItem Text="Ranks" Value="Ranks"></asp:MenuItem>
                                     </Items>
+
+                                    <StaticHoverStyle CssClass="mainStaticHover" />
+                                    <StaticMenuItemStyle CssClass="menuStatItem" HorizontalPadding="12px" VerticalPadding="15px" />
+                                    <StaticMenuStyle CssClass="mainStatic" />
                                 </asp:Menu>
                             </ul>
 
@@ -75,10 +78,10 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav">
-                                <li><a runat="server" href="~/About">Frame Data</a></li>
-                                <li><a runat="server" href="~/Contact">Guides</a></li>
-
-                                <asp:Menu ID="loggedInMenu" runat="server" Orientation="Horizontal">
+                                <asp:Menu ID="anonMenu" runat="server" Orientation="Horizontal" StaticHoverStyle-CssClass="mainStaticHover" StaticMenuStyle-CssClass="mainStatic" DynamicHoverStyle-CssClass="menuDynamicHover" DynamicMenuStyle-CssClass="menuDyn" DynamicMenuItemStyle-CssClass="menuDynItem" StaticMenuItemStyle-CssClass="menuStatItem" StaticMenuItemStyle-HorizontalPadding="12px" StaticMenuItemStyle-VerticalPadding="15px">
+                                    <DynamicHoverStyle CssClass="menuDynamicHover" />
+                                    <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
+                                    <DynamicMenuStyle CssClass="menuDyn" />
                                     <Items>
                                         <asp:MenuItem Text="Frame Data" Value="Frame Data"></asp:MenuItem>
                                         <asp:MenuItem Text="Guides" Value="Guides">
@@ -89,11 +92,13 @@
                                         <asp:MenuItem Text="Ranks" Value="Ranks"></asp:MenuItem>
                                         <asp:MenuItem Text="Statistics" Value="Statistics"></asp:MenuItem>
                                         <asp:MenuItem Text="Notes" Value="Notes"></asp:MenuItem>
-                                        
                                     </Items>
+
+                                    <StaticHoverStyle CssClass="mainStaticHover" />
+                                    <StaticMenuItemStyle CssClass="menuStatItem" HorizontalPadding="12px" VerticalPadding="15px" />
+                                    <StaticMenuStyle CssClass="mainStatic" />
                                 </asp:Menu>
                             </ul>
-
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
@@ -111,9 +116,12 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Tekken Information Centre</p>
             </footer>
         </div>
+
+
+
     </form>
 </body>
 </html>

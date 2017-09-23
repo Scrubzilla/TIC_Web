@@ -1,0 +1,48 @@
+﻿.logoImage {
+    margin-right: 20px;
+}
+
+.mainStatic {
+    font-size: 16px;
+    font-family: Georgia;
+}
+
+.mainStatic a:focus {
+    outline: 0;
+}
+
+.mainStatic a:hover {
+    color: white;
+    border: 0px;
+}
+
+.menuStatItem {
+    color: #D9D9D9;
+}
+
+.mainStaticHover {
+
+}
+
+.menuDyn {
+    text-align: center;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.menuDynItem {
+    color: #D9D9D9;
+    text-align: left;
+    margin-left: 10px;
+    width: 90px;
+    font-size: 16px;
+}
+
+.nav.navbar-nav.navbar-right li a {
+    font-size: 16px;
+    font-family: Georgia;
+    color: #D9D9D9 !important;
+}
+
+.nav.navbar-nav.navbar-right li a:hover {
+    color: white !important;
+}
