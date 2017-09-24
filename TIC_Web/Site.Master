@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <a runat="server" href="~/Default">
-                        <asp:Image ID="Logo" runat="server" ImageUrl="~/Images/Logo.png" CssClass="logoImage" Height="50px" AlternateText="TIC Logo" />
+                        <asp:Image ID="Logo" runat="server" ImageUrl="~/Images/System/Logo.png" CssClass="logoImage" Height="50px" AlternateText="TIC Logo" />
                     </a>
                 </div>
 
@@ -56,7 +56,7 @@
                                     <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
                                     <DynamicMenuStyle CssClass="menuDyn" />
                                     <Items>
-                                        <asp:MenuItem Text="Frame Data" Value="Frame Data"></asp:MenuItem>
+                                        <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx"></asp:MenuItem>
                                         <asp:MenuItem Text="Guides" Value="Guides">
                                             <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
                                             <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>
@@ -83,7 +83,7 @@
                                     <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
                                     <DynamicMenuStyle CssClass="menuDyn" />
                                     <Items>
-                                        <asp:MenuItem Text="Frame Data" Value="Frame Data"></asp:MenuItem>
+                                        <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx"></asp:MenuItem>
                                         <asp:MenuItem Text="Guides" Value="Guides">
                                             <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
                                             <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>

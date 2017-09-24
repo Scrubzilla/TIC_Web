@@ -191,6 +191,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="CharacterSelect.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -199,6 +200,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrameData.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -208,7 +210,83 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Images\Logo.png" />
+    <Content Include="Images\CharacterPortraits\akuma_off.png" />
+    <Content Include="Images\CharacterPortraits\akuma_on.png" />
+    <Content Include="Images\CharacterPortraits\alisa_off.png" />
+    <Content Include="Images\CharacterPortraits\alisa_on.png" />
+    <Content Include="Images\CharacterPortraits\asuka_off.png" />
+    <Content Include="Images\CharacterPortraits\asuka_on.png" />
+    <Content Include="Images\CharacterPortraits\bob_off.png" />
+    <Content Include="Images\CharacterPortraits\bob_on.png" />
+    <Content Include="Images\CharacterPortraits\bryan_off.png" />
+    <Content Include="Images\CharacterPortraits\bryan_on.png" />
+    <Content Include="Images\CharacterPortraits\claudio_off.png" />
+    <Content Include="Images\CharacterPortraits\claudio_on.png" />
+    <Content Include="Images\CharacterPortraits\deviljin_off.png" />
+    <Content Include="Images\CharacterPortraits\deviljin_on.png" />
+    <Content Include="Images\CharacterPortraits\dragunov_off.png" />
+    <Content Include="Images\CharacterPortraits\dragunov_on.png" />
+    <Content Include="Images\CharacterPortraits\eddy_off.png" />
+    <Content Include="Images\CharacterPortraits\eddy_on.png" />
+    <Content Include="Images\CharacterPortraits\eliza_off.png" />
+    <Content Include="Images\CharacterPortraits\eliza_on.png" />
+    <Content Include="Images\CharacterPortraits\feng_off.png" />
+    <Content Include="Images\CharacterPortraits\feng_on.png" />
+    <Content Include="Images\CharacterPortraits\gigas_off.png" />
+    <Content Include="Images\CharacterPortraits\gigas_on.png" />
+    <Content Include="Images\CharacterPortraits\heihachi_off.png" />
+    <Content Include="Images\CharacterPortraits\heihachi_on.png" />
+    <Content Include="Images\CharacterPortraits\hwoarang_off.png" />
+    <Content Include="Images\CharacterPortraits\hwoarang_on.png" />
+    <Content Include="Images\CharacterPortraits\jack7_off.png" />
+    <Content Include="Images\CharacterPortraits\jack7_on.png" />
+    <Content Include="Images\CharacterPortraits\jin_off.png" />
+    <Content Include="Images\CharacterPortraits\jin_on.png" />
+    <Content Include="Images\CharacterPortraits\josie_off.png" />
+    <Content Include="Images\CharacterPortraits\josie_on.png" />
+    <Content Include="Images\CharacterPortraits\katarina_off.png" />
+    <Content Include="Images\CharacterPortraits\katarina_on.png" />
+    <Content Include="Images\CharacterPortraits\kazumi_off.png" />
+    <Content Include="Images\CharacterPortraits\kazumi_on.png" />
+    <Content Include="Images\CharacterPortraits\kazuya_off.png" />
+    <Content Include="Images\CharacterPortraits\kazuya_on.png" />
+    <Content Include="Images\CharacterPortraits\king_off.png" />
+    <Content Include="Images\CharacterPortraits\king_on.png" />
+    <Content Include="Images\CharacterPortraits\kuma_off.png" />
+    <Content Include="Images\CharacterPortraits\kuma_on.png" />
+    <Content Include="Images\CharacterPortraits\lars_off.png" />
+    <Content Include="Images\CharacterPortraits\lars_on.png" />
+    <Content Include="Images\CharacterPortraits\law_off.png" />
+    <Content Include="Images\CharacterPortraits\law_on.png" />
+    <Content Include="Images\CharacterPortraits\lee_off.png" />
+    <Content Include="Images\CharacterPortraits\lee_on.png" />
+    <Content Include="Images\CharacterPortraits\leo_off.png" />
+    <Content Include="Images\CharacterPortraits\leo_on.png" />
+    <Content Include="Images\CharacterPortraits\lili_off.png" />
+    <Content Include="Images\CharacterPortraits\lili_on.png" />
+    <Content Include="Images\CharacterPortraits\luckychloe_off.png" />
+    <Content Include="Images\CharacterPortraits\luckychloe_on.png" />
+    <Content Include="Images\CharacterPortraits\masterraven_off.png" />
+    <Content Include="Images\CharacterPortraits\masterraven_on.png" />
+    <Content Include="Images\CharacterPortraits\miguel_off.png" />
+    <Content Include="Images\CharacterPortraits\miguel_on.png" />
+    <Content Include="Images\CharacterPortraits\nina_off.png" />
+    <Content Include="Images\CharacterPortraits\nina_on.png" />
+    <Content Include="Images\CharacterPortraits\panda_off.png" />
+    <Content Include="Images\CharacterPortraits\panda_on.png" />
+    <Content Include="Images\CharacterPortraits\paul_off.png" />
+    <Content Include="Images\CharacterPortraits\paul_on.png" />
+    <Content Include="Images\CharacterPortraits\shaheen_off.png" />
+    <Content Include="Images\CharacterPortraits\shaheen_on.png" />
+    <Content Include="Images\CharacterPortraits\steve_off.png" />
+    <Content Include="Images\CharacterPortraits\steve_on.png" />
+    <Content Include="Images\CharacterPortraits\unknown_off.png" />
+    <Content Include="Images\CharacterPortraits\unknown_on.png" />
+    <Content Include="Images\CharacterPortraits\xiaoyu_off.png" />
+    <Content Include="Images\CharacterPortraits\xiaoyu_on.png" />
+    <Content Include="Images\CharacterPortraits\yoshimitsu_off.png" />
+    <Content Include="Images\CharacterPortraits\yoshimitsu_on.png" />
+    <Content Include="Images\System\Logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -360,6 +438,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CharacterSelect.aspx.cs">
+      <DependentUpon>CharacterSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CharacterSelect.aspx.designer.cs">
+      <DependentUpon>CharacterSelect.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -373,6 +458,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrameData.aspx.cs">
+      <DependentUpon>FrameData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrameData.aspx.designer.cs">
+      <DependentUpon>FrameData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
