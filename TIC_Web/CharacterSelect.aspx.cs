@@ -16,7 +16,7 @@ namespace TIC_Web
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //Test kommentar, endast till för att testa så att en commit funkar som det ska.
         }
     }
 }
