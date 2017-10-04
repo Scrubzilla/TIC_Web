@@ -14,9 +14,10 @@ namespace TIC_Web
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void PortraitClicked(object sender, CommandEventArgs e)
         {
-
+            String chosenChar = e.CommandName;
+            Response.Redirect("~/FrameData.aspx?character=" + chosenChar);
         }
     }
 }

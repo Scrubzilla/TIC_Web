@@ -3,59 +3,57 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Character Select</h2>
     <p>Choose which character to show information for.</p>
-
+    <br />
     <div class="centralized">
-        <br />
-        <br />
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/akuma_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/alisa_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/asuka_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/bob_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/bryan_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/claudio_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/deviljin_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/dragunov_off.png"></asp:ImageButton>
-        <br />
-        <br />
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/eddy_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/eliza_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/feng_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/gigas_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/heihachi_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/hwoarang_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/jack7_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/jin_off.png"></asp:ImageButton>
-        <br />
-        <br />
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/josie_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/katarina_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/kazumi_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/kazuya_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/king_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/kuma_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/lars_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/law_off.png"></asp:ImageButton>
-        <br />
-        <br />
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/lee_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/leo_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/lili_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/luckychloe_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/masterraven_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/miguel_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/nina_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/panda_off.png"></asp:ImageButton>
-        <br />
-        <br />
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/paul_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/shaheen_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/steve_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/xiaoyu_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/yoshimitsu_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/unknown_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/unknown_off.png"></asp:ImageButton>
-        <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/unknown_off.png"></asp:ImageButton>
-        <br />
-        <br />
+        <div class="imageRow">
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/akuma_off.png" onmouseover="this.src='/Images/CharacterPortraits/akuma_on.png'" onmouseout="this.src='/Images/CharacterPortraits/akuma_off.png'" OnCommand="PortraitClicked" CommandName="Akuma" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/alisa_off.png" onmouseover="this.src='/Images/CharacterPortraits/alisa_on.png'" onmouseout="this.src='/Images/CharacterPortraits/alisa_off.png'" OnCommand="PortraitClicked" CommandName="Alisa" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/asuka_off.png" onmouseover="this.src='/Images/CharacterPortraits/asuka_on.png'" onmouseout="this.src='/Images/CharacterPortraits/asuka_off.png'" OnCommand="PortraitClicked" CommandName="Asuka" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/bob_off.png" onmouseover="this.src='/Images/CharacterPortraits/bob_on.png'" onmouseout="this.src='/Images/CharacterPortraits/bob_off.png'" OnCommand="PortraitClicked" CommandName="Bob" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/bryan_off.png" onmouseover="this.src='/Images/CharacterPortraits/bryan_on.png'" onmouseout="this.src='/Images/CharacterPortraits/bryan_off.png'" OnCommand="PortraitClicked" CommandName="Bryan" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/claudio_off.png" onmouseover="this.src='/Images/CharacterPortraits/claudio_on.png'" onmouseout="this.src='/Images/CharacterPortraits/claudio_off.png'" OnCommand="PortraitClicked" CommandName="Claudio" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/deviljin_off.png" onmouseover="this.src='/Images/CharacterPortraits/deviljin_on.png'" onmouseout="this.src='/Images/CharacterPortraits/deviljin_off.png'" OnCommand="PortraitClicked" CommandName="DevilJin" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/dragunov_off.png" onmouseover="this.src='/Images/CharacterPortraits/dragunov_on.png'" onmouseout="this.src='/Images/CharacterPortraits/dragunov_off.png'" OnCommand="PortraitClicked" CommandName="Dragunov" CssClass="charPortrait"></asp:ImageButton>
+        </div>
+        <div class="imageRow">
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/eddy_off.png" onmouseover="this.src='/Images/CharacterPortraits/eddy_on.png'" onmouseout="this.src='/Images/CharacterPortraits/eddy_off.png'" OnCommand="PortraitClicked" CommandName="Eddy" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/eliza_off.png" onmouseover="this.src='/Images/CharacterPortraits/eliza_on.png'" onmouseout="this.src='/Images/CharacterPortraits/eliza_off.png'" OnCommand="PortraitClicked" CommandName="Eliza" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/feng_off.png" onmouseover="this.src='/Images/CharacterPortraits/feng_on.png'" onmouseout="this.src='/Images/CharacterPortraits/feng_off.png'" OnCommand="PortraitClicked" CommandName="Feng" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/gigas_off.png" onmouseover="this.src='/Images/CharacterPortraits/gigas_on.png'" onmouseout="this.src='/Images/CharacterPortraits/gigas_off.png'" OnCommand="PortraitClicked" CommandName="Gigas" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/heihachi_off.png" onmouseover="this.src='/Images/CharacterPortraits/heihachi_on.png'" onmouseout="this.src='/Images/CharacterPortraits/heihachi_off.png'" OnCommand="PortraitClicked" CommandName="Heihachi" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/hwoarang_off.png" onmouseover="this.src='/Images/CharacterPortraits/hwoarang_on.png'" onmouseout="this.src='/Images/CharacterPortraits/hwoarang_off.png'" OnCommand="PortraitClicked" CommandName="Hwoarang" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/jack7_off.png" onmouseover="this.src='/Images/CharacterPortraits/jack7_on.png'" onmouseout="this.src='/Images/CharacterPortraits/jack7_off.png'" OnCommand="PortraitClicked" CommandName="Jack7" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/jin_off.png" onmouseover="this.src='/Images/CharacterPortraits/jin_on.png'" onmouseout="this.src='/Images/CharacterPortraits/jin_off.png'" OnCommand="PortraitClicked" CommandName="Jin" CssClass="charPortrait"></asp:ImageButton>
+        </div>
+        <div class="imageRow">
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/josie_off.png" onmouseover="this.src='/Images/CharacterPortraits/josie_on.png'" onmouseout="this.src='/Images/CharacterPortraits/josie_off.png'" OnCommand="PortraitClicked" CommandName="Josie" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/katarina_off.png" onmouseover="this.src='/Images/CharacterPortraits/katarina_on.png'" onmouseout="this.src='/Images/CharacterPortraits/katarina_off.png'" OnCommand="PortraitClicked" CommandName="Katarina" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/kazumi_off.png" onmouseover="this.src='/Images/CharacterPortraits/kazumi_on.png'" onmouseout="this.src='/Images/CharacterPortraits/kazumi_off.png'" OnCommand="PortraitClicked" CommandName="Kazumi" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/kazuya_off.png" onmouseover="this.src='/Images/CharacterPortraits/kazuya_on.png'" onmouseout="this.src='/Images/CharacterPortraits/kazuya_off.png'" OnCommand="PortraitClicked" CommandName="Kazuya" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/king_off.png" onmouseover="this.src='/Images/CharacterPortraits/king_on.png'" onmouseout="this.src='/Images/CharacterPortraits/king_off.png'" OnCommand="PortraitClicked" CommandName="King" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/kuma_off.png" onmouseover="this.src='/Images/CharacterPortraits/kuma_on.png'" onmouseout="this.src='/Images/CharacterPortraits/kuma_off.png'" OnCommand="PortraitClicked" CommandName="Kuma" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/lars_off.png" onmouseover="this.src='/Images/CharacterPortraits/lars_on.png'" onmouseout="this.src='/Images/CharacterPortraits/lars_off.png'" OnCommand="PortraitClicked" CommandName="Lars" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/law_off.png" onmouseover="this.src='/Images/CharacterPortraits/law_on.png'" onmouseout="this.src='/Images/CharacterPortraits/law_off.png'" OnCommand="PortraitClicked" CommandName="Law" CssClass="charPortrait"></asp:ImageButton>
+        </div>
+        <div class="imageRow">
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/lee_off.png" onmouseover="this.src='/Images/CharacterPortraits/lee_on.png'" onmouseout="this.src='/Images/CharacterPortraits/lee_off.png'" OnCommand="PortraitClicked" CommandName="Lee" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/leo_off.png" onmouseover="this.src='/Images/CharacterPortraits/leo_on.png'" onmouseout="this.src='/Images/CharacterPortraits/leo_off.png'" OnCommand="PortraitClicked" CommandName="Leo" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/lili_off.png" onmouseover="this.src='/Images/CharacterPortraits/lili_on.png'" onmouseout="this.src='/Images/CharacterPortraits/lili_off.png'" OnCommand="PortraitClicked" CommandName="Lili" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/luckychloe_off.png" onmouseover="this.src='/Images/CharacterPortraits/luckychloe_on.png'" onmouseout="this.src='/Images/CharacterPortraits/luckychloe_off.png'" OnCommand="PortraitClicked" CommandName="LuckyChloe" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/masterraven_off.png" onmouseover="this.src='/Images/CharacterPortraits/masterraven_on.png'" onmouseout="this.src='/Images/CharacterPortraits/masterraven_off.png'" OnCommand="PortraitClicked" CommandName="MasterRaven" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/miguel_off.png" onmouseover="this.src='/Images/CharacterPortraits/miguel_on.png'" onmouseout="this.src='/Images/CharacterPortraits/miguel_off.png'" OnCommand="PortraitClicked" CommandName="Miguel" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/nina_off.png" onmouseover="this.src='/Images/CharacterPortraits/nina_on.png'" onmouseout="this.src='/Images/CharacterPortraits/nina_off.png'" OnCommand="PortraitClicked" CommandName="Nina" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/panda_off.png" onmouseover="this.src='/Images/CharacterPortraits/panda_on.png'" onmouseout="this.src='/Images/CharacterPortraits/panda_off.png'" OnCommand="PortraitClicked" CommandName="Panda" CssClass="charPortrait"></asp:ImageButton>
+        </div>
+        <div class="imageRow">
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/paul_off.png" onmouseover="this.src='/Images/CharacterPortraits/paul_on.png'" onmouseout="this.src='/Images/CharacterPortraits/paul_off.png'" OnCommand="PortraitClicked" CommandName="Paul" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/shaheen_off.png" onmouseover="this.src='/Images/CharacterPortraits/shaheen_on.png'" onmouseout="this.src='/Images/CharacterPortraits/shaheen_off.png'" OnCommand="PortraitClicked" CommandName="Shaheen" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/steve_off.png" onmouseover="this.src='/Images/CharacterPortraits/steve_on.png'" onmouseout="this.src='/Images/CharacterPortraits/steve_off.png'" OnCommand="PortraitClicked" CommandName="Steve" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/xiaoyu_off.png" onmouseover="this.src='/Images/CharacterPortraits/xiaoyu_on.png'" onmouseout="this.src='/Images/CharacterPortraits/xiaoyu_off.png'" OnCommand="PortraitClicked" CommandName="Xiaoyu" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/yoshimitsu_off.png" onmouseover="this.src='/Images/CharacterPortraits/yoshimitsu_on.png'" onmouseout="this.src='/Images/CharacterPortraits/yoshimitsu_off.png'" OnCommand="PortraitClicked" CommandName="Yoshimitsu" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/unknown_off.png" onmouseover="this.src='/Images/CharacterPortraits/unknown_on.png'" onmouseout="this.src='/Images/CharacterPortraits/unknown_off.png'" OnClientClick="return false;" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/unknown_off.png" onmouseover="this.src='/Images/CharacterPortraits/unknown_on.png'" onmouseout="this.src='/Images/CharacterPortraits/unknown_off.png'" OnClientClick="return false;" CssClass="charPortrait"></asp:ImageButton>
+            <asp:ImageButton runat="server" ImageUrl="~/Images/CharacterPortraits/unknown_off.png" onmouseover="this.src='/Images/CharacterPortraits/unknown_on.png'" onmouseout="this.src='/Images/CharacterPortraits/unknown_off.png'" OnClientClick="return false;" CssClass="charPortrait"></asp:ImageButton>
+        </div>
     </div>
 </asp:Content>
