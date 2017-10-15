@@ -56,8 +56,8 @@
                                     <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
                                     <DynamicMenuStyle CssClass="menuDyn" />
                                     <Items>
-                                        <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx"></asp:MenuItem>
-                                        <asp:MenuItem Text="Character Information" Value="Character Information" NavigateUrl="CharacterSelect.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx?section=framedata"></asp:MenuItem>
+                                        <asp:MenuItem Text="Character Information" Value="Character Information" NavigateUrl="CharacterSelect.aspx?section=charinfo"></asp:MenuItem>
                                         <asp:MenuItem Text="Guides" Value="Guides">
                                             <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
                                             <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>
@@ -84,8 +84,8 @@
                                     <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
                                     <DynamicMenuStyle CssClass="menuDyn" />
                                     <Items>
-                                        <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx"></asp:MenuItem>
-                                        <asp:MenuItem Text="Character Information" Value="Character Information" NavigateUrl="CharacterSelect.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx?section=framedata"></asp:MenuItem>
+                                        <asp:MenuItem Text="Character Information" Value="Character Information" NavigateUrl="CharacterSelect.aspx?section=charinfo"></asp:MenuItem>
                                         <asp:MenuItem Text="Guides" Value="Guides">
                                             <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
                                             <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>

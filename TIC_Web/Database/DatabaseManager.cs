@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -25,10 +28,29 @@ namespace TIC_Web.Database
             return list;
         }
 
-        public ArrayList GetMovesForProperty(String property, String value)
+        public DataSet GetMovesForProperty(String character, String property, String searchValue)
         {
-            ArrayList list = new ArrayList();
-            return list;
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
+            conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Moves WHERE CharacterName = '" + character + "' AND " + property + " LIKE '%"  + searchValue + "%'", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            conn.Close();
+
+            return ds;
+        }
+
+        public DataSet GetAllMovesForCharacter(String character){
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
+            conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Command, HitLevel, Damage, StartUpFrameDisplay, BlockFrameDisplay, HitFrameDisplay, CHFrameDisplay FROM Moves WHERE CharacterName='" + character + "'", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            conn.Close();
+
+            return ds;
         }
 
     }
