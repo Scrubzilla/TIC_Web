@@ -74,7 +74,7 @@ p {
 }
 
     .imageRow .unknownImage {
-        padding:0px;
+        padding: 0px;
     }
 
 
@@ -86,3 +86,15 @@ p {
     margin-right: 100px;
     margin-left: 100px;
 }
+
+.custLinkButton {
+    color: #D9D9D9;
+}
+
+    .custLinkButton:focus {
+        outline: 0;
+    }
+
+    .custLinkButton:hover {
+        color: white;
+    }

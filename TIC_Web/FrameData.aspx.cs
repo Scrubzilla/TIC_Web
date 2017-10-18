@@ -47,7 +47,5 @@ namespace TIC_Web
             GridView1.DataSource = tableContent;
             GridView1.DataBind();
         }
-
-
     }
 }
