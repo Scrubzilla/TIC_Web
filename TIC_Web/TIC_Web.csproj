@@ -191,6 +191,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="CharacterInformation.aspx" />
     <Content Include="CharacterSelect.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -440,6 +441,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CharacterInformation.aspx.cs">
+      <DependentUpon>CharacterInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CharacterInformation.aspx.designer.cs">
+      <DependentUpon>CharacterInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CharacterSelect.aspx.cs">
       <DependentUpon>CharacterSelect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

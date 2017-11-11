@@ -7,14 +7,14 @@
     font-family: Georgia;
 }
 
-    .mainStatic a:focus {
-        outline: 0;
-    }
+.mainStatic a:focus {
+    outline: 0;
+}
 
-    .mainStatic a:hover {
-        color: white;
-        border: 0px;
-    }
+.mainStatic a:hover {
+    color: white;
+    border: 0px;
+}
 
 .menuStatItem {
     color: #D9D9D9;
@@ -42,9 +42,9 @@
     color: #D9D9D9 !important;
 }
 
-    .nav.navbar-nav.navbar-right li a:hover {
-        color: white !important;
-    }
+.nav.navbar-nav.navbar-right li a:hover {
+    color: white !important;
+}
 
 .navbar {
     background-color: #141414;
@@ -73,14 +73,14 @@ p {
     margin-bottom: 5px;
 }
 
-    .imageRow .unknownImage {
-        padding: 0px;
-    }
+.imageRow .unknownImage {
+    padding: 0px;
+}
 
 
-    .imageRow .charPortrait:focus {
-        outline: 0;
-    }
+.imageRow .charPortrait:focus {
+    outline: 0;
+}
 
 .moveLabel {
     margin-right: 100px;
@@ -91,10 +91,65 @@ p {
     color: #D9D9D9;
 }
 
-    .custLinkButton:focus {
-        outline: 0;
-    }
+.custLinkButton:focus {
+    outline: 0;
+}
 
-    .custLinkButton:hover {
-        color: white;
-    }
+.custLinkButton:hover {
+    color: white;
+}
+
+input[type=text] {
+    width: 200px;
+    background-color: #121212;
+    border-color: #D9D9D9;
+    color: #D9D9D9;
+    border-width:1px;
+}
+
+input[type=text]:focus {
+    outline: 0;
+}
+
+select {
+    background-color: #121212;
+    border-color: #2E2E2E;
+    color: #D9D9D9;
+    border-width:0px;
+    border-color:transparent;
+}
+
+select:focus {
+    outline: 0px;
+}
+
+.searchBtn {
+    background-color: #121212;
+    border-color: #D9D9D9;
+    color: #D9D9D9;
+    border-width: 1px;
+    margin-left:5px;
+}
+
+.smallPadding {
+    margin-left:5px;
+}
+
+.largePadding {
+    margin-left:50px;
+}
+
+.charInfoRight {
+    float: right;
+    width:87%;
+
+}
+
+.charInfoLeft {
+    float: left;
+    width: 12%;
+}
+
+.charInfoLeft .navbar{
+    color:red;
+}

@@ -30,7 +30,7 @@ namespace TIC_Web
                 }
                 else if (section.Equals("charinfo"))
                 {
-                    Response.Redirect("~/Default");
+                    Response.Redirect("~/CharacterInformation.aspx?character=" + chosenChar);
                 }
                 else
                 {
