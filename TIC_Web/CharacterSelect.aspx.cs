@@ -10,7 +10,7 @@ namespace TIC_Web
     public partial class CharacterSelect : System.Web.UI.Page
     {
 
-        private String section = "";
+        private string section = "";
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,7 +21,7 @@ namespace TIC_Web
 
         protected void PortraitClicked(object sender, CommandEventArgs e)
         {
-            String chosenChar = e.CommandName;
+            string chosenChar = e.CommandName;
 
             if (section != null ){
                 if (section.Equals("framedata"))

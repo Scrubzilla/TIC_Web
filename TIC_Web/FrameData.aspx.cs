@@ -17,22 +17,19 @@ namespace TIC_Web
         {
             string selectedCharacter = Request.QueryString["character"];
 
-
-           if (!IsPostBack) {
-
-
-                characterList.SelectedValue = selectedCharacter;
-                    //characterList.Items.FindByText(Convert.ToString(selectedCharacter)).Selected = true;
-
-                //characterList.ClearSelection();
-                //characterList.Items.FindByValue(selectedCharacter).Selected = true;
+            if (!IsPostBack)
+            {
+                characterList.DataBind();
+                if (characterList.Items.FindByText(selectedCharacter.ToString()) != null)
+                {
+                    characterList.Items.FindByText(selectedCharacter.ToString()).Selected = true;
+                }
             }
+
             LoadAllMovesForCharacter(selectedCharacter);
-
-
-            
-
         }
+
+
 
         protected void RefreshMoves(object sender, EventArgs e)
         {

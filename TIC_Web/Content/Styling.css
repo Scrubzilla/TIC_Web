@@ -2,6 +2,10 @@
     margin-right: 20px;
 }
 
+label {
+    color: #D9D9D9;
+}
+
 .mainStatic {
     font-size: 16px;
     font-family: Georgia;
@@ -152,4 +156,43 @@ select:focus {
 
 .charInfoLeft .navbar{
     color:red;
+}
+
+.extra-margin {
+    margin-bottom:5px;
+}
+
+.center_div {
+    margin: 0 auto;
+    width:100%;
+}
+
+.width {
+    width: 100%;
+}
+
+.modBootBtn {
+    color: #D9D9D9;
+    background-color: #121212;
+    border-color: #D9D9D9;
+}
+
+.modBootBtn:hover {
+    background-color: #1C1C1C;
+    color: white;
+}
+
+.modBootBtn:focus {
+    outline: 0;
+    color: #D9D9D9;
+}
+
+.modBootBtn:focus:hover {
+    color: white;
+    background-color: #1C1C1C;
+}
+
+input[type=checkbox] {
+    position: relative;
+    top:1px;
 }
