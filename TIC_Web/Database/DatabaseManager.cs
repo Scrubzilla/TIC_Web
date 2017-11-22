@@ -11,23 +11,7 @@ namespace TIC_Web.Database
 {
     public class DatabaseManager
     {
-        public String GetMove(int id)
-        {
-            return "";
-        }
-
-        public ArrayList GetMovesForCharacter(String characterName)
-        {
-            ArrayList list = new ArrayList();
-            return list;
-        }
-
-        public ArrayList GetAllMoves()
-        {
-            ArrayList list = new ArrayList();
-            return list;
-        }
-
+        //Get all moves where a certain property matches the rquirements.
         public DataSet GetMovesForProperty(String character, String property, String searchValue)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
@@ -41,11 +25,53 @@ namespace TIC_Web.Database
             return ds;
         }
 
+        //Get all of the moves and the moves attributes for a character
         public DataSet GetAllMovesForCharacter(String character){
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
             conn.Open();
 
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT Command, HitLevel, Damage, StartUpFrameDisplay, BlockFrameDisplay, HitFrameDisplay, CHFrameDisplay FROM Moves WHERE CharacterName='" + character + "'", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            conn.Close();
+
+            return ds;
+        }
+
+        //Get a single columns from the character table.
+        public DataSet GetAttrForCharacter(String attribute, String character){
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
+            conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT " + attribute + " FROM Characters WHERE CharacterName='" + character + "'", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            conn.Close();
+
+            return ds;
+        }
+
+        //Get multiple columns from the character table.
+        public DataSet GetMultipleAttrForCharacter(String[] attributes, String character)
+        {
+
+            System.Diagnostics.Debug.WriteLine("Test");
+            String cmdAttributes = "";
+
+            for (int i = 0; i < attributes.Length; i++) {
+                if (i == 0){
+                    cmdAttributes = attributes[i];
+                }else {
+                    cmdAttributes = cmdAttributes + ", " + attributes[i];
+                }
+            }
+
+            System.Diagnostics.Debug.WriteLine(cmdAttributes);
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
+            conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT " + cmdAttributes + " FROM Characters WHERE CharacterName='" + character + "'", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             conn.Close();

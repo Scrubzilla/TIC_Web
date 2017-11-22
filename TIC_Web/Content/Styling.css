@@ -17,14 +17,11 @@ label {
 
 .mainStatic a:hover {
     color: white;
-    border: 0px;
+    border: 0;
 }
 
 .menuStatItem {
     color: #D9D9D9;
-}
-
-.mainStaticHover {
 }
 
 .menuDyn {
@@ -78,7 +75,7 @@ p {
 }
 
 .imageRow .unknownImage {
-    padding: 0px;
+    padding: 0;
 }
 
 
@@ -117,14 +114,13 @@ input[type=text]:focus {
 
 select {
     background-color: #121212;
-    border-color: #2E2E2E;
+    border-color: #D9D9D9;
     color: #D9D9D9;
-    border-width:0px;
-    border-color:transparent;
+    border-width: 1px;
 }
 
 select:focus {
-    outline: 0px;
+    outline: 0;
 }
 
 .searchBtn {
@@ -146,16 +142,30 @@ select:focus {
 .charInfoRight {
     float: right;
     width:87%;
-
 }
 
 .charInfoLeft {
     float: left;
     width: 12%;
+    margin-top:25px;
 }
 
-.charInfoLeft .navbar{
-    color:red;
+.charInfoContent {
+    margin-top:45px;
+    background: red;
+}
+
+.charInfoDesc {
+    height:80px;
+}
+
+.charInfoMenu {
+    margin-top: 40px;
+    background:red;
+}
+
+.charInfoBotSpacing {
+    margin-top:600px;
 }
 
 .extra-margin {
@@ -195,4 +205,28 @@ select:focus {
 input[type=checkbox] {
     position: relative;
     top:1px;
+}
+
+.top {
+    display: inline-block;
+    width: 1200px;
+}
+
+.left {
+    font-size:1px;
+    float: left;
+    width: 400px;
+}
+
+.center {
+
+    float: left;
+    width: 400px;
+
+}
+
+.right {
+    font-size: 1px;
+    float: left;
+    width: 400px;
 }

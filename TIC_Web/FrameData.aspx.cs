@@ -17,20 +17,23 @@ namespace TIC_Web
         {
             string selectedCharacter = Request.QueryString["character"];
 
+            //If if is the first time the page is loaded, force-bind the character list to the database to make sure it contains items. 
             if (!IsPostBack)
             {
                 characterList.DataBind();
+                
+                //Check if the selected character from the URL exists, if it does, select the correct character.
                 if (characterList.Items.FindByText(selectedCharacter.ToString()) != null)
                 {
                     characterList.Items.FindByText(selectedCharacter.ToString()).Selected = true;
                 }
             }
-
+            
             LoadAllMovesForCharacter(selectedCharacter);
         }
 
 
-
+        //Refresh the movelist with the moves that match the specified search requirements.
         protected void RefreshMoves(object sender, EventArgs e)
         {
             String character = characterList.SelectedValue;
@@ -44,6 +47,7 @@ namespace TIC_Web
             GridView1.DataBind();
         }
 
+        //Fill the movelist with all of the moves for a specified character.
         private void LoadAllMovesForCharacter(String selectedCharacter)
         {
             String character = selectedCharacter;

@@ -39,7 +39,8 @@
     <br />
     <div class="centralized">
         <p>
-            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
+            <asp:Label runat="server">Don't have an account?</asp:Label>
+            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" CssClass="custLinkButton">Register as a new user</asp:HyperLink>
         </p>
         <p>
             <%-- Enable this once you have account confirmation enabled for password reset functionality
