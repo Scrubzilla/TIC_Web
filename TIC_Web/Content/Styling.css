@@ -230,3 +230,8 @@ input[type=checkbox] {
     float: left;
     width: 400px;
 }
+
+.panelClass {
+    background-color: lime;
+    width: 300px;
+}

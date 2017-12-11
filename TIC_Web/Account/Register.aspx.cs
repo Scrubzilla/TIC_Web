@@ -23,13 +23,32 @@ namespace TIC_Web.Account
                 //string code = manager.GenerateEmailConfirmationToken(user.Id);
                 //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
                 //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
-
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+                ManageUserRole(user, "User");
+                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
-            else 
+            else
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
+            }
+        }
+
+        //Adds a user to the role "User".
+        private void ManageUserRole(ApplicationUser user, string role)
+        {
+            ApplicationDbContext dbcontext = new ApplicationDbContext();
+            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var result = manager.AddToRole(user.Id, role);
+
+            if (!result.Succeeded)
+            {
+                ErrorMessage.Text = result.Errors.FirstOrDefault();
+
+            }
+            else
+            {
+                dbcontext.SaveChanges();
             }
         }
     }

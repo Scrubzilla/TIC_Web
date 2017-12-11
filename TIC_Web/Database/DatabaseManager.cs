@@ -17,7 +17,7 @@ namespace TIC_Web.Database
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
             conn.Open();
 
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Moves WHERE CharacterName = '" + character + "' AND " + property + " LIKE '%"  + searchValue + "%'", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Moves WHERE CharacterName = '" + character + "' AND " + property + " LIKE '%" + searchValue + "%'", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             conn.Close();
@@ -26,7 +26,8 @@ namespace TIC_Web.Database
         }
 
         //Get all of the moves and the moves attributes for a character
-        public DataSet GetAllMovesForCharacter(String character){
+        public DataSet GetAllMovesForCharacter(String character)
+        {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
             conn.Open();
 
@@ -39,7 +40,8 @@ namespace TIC_Web.Database
         }
 
         //Get a single columns from the character table.
-        public DataSet GetAttrForCharacter(String attribute, String character){
+        public DataSet GetAttrForCharacter(String attribute, String character)
+        {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
             conn.Open();
 
@@ -58,10 +60,14 @@ namespace TIC_Web.Database
             System.Diagnostics.Debug.WriteLine("Test");
             String cmdAttributes = "";
 
-            for (int i = 0; i < attributes.Length; i++) {
-                if (i == 0){
+            for (int i = 0; i < attributes.Length; i++)
+            {
+                if (i == 0)
+                {
                     cmdAttributes = attributes[i];
-                }else {
+                }
+                else
+                {
                     cmdAttributes = cmdAttributes + ", " + attributes[i];
                 }
             }
@@ -72,6 +78,19 @@ namespace TIC_Web.Database
             conn.Open();
 
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT " + cmdAttributes + " FROM Characters WHERE CharacterName='" + character + "'", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            conn.Close();
+
+            return ds;
+        }
+
+        public DataSet GetColumnsForTable(string tableName)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
+            conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'" + tableName + "'", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             conn.Close();
