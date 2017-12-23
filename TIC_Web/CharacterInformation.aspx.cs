@@ -33,6 +33,23 @@ namespace TIC_Web
             System.Diagnostics.Debug.WriteLine(dr["CharacterName"]);
             System.Diagnostics.Debug.WriteLine(dr["Description"]);
 
+            ds = dbm.GetColumnsForTable("Characters");
+            dt = new DataTable();
+            dt = ds.Tables[0];
+
+            foreach(DataColumn column in dt.Columns){
+                System.Diagnostics.Debug.WriteLine(column.ToString());
+
+               
+            }
+
+            foreach (DataRow drr in dt.Rows) {
+                System.Diagnostics.Debug.WriteLine(drr["COLUMN_NAME"]);
+            }
+
+
+
+
             // foreach (DataRow dr in dt.Rows)
             //{
             // dataTest = dataTest + dr["CharacterName"].ToString();    

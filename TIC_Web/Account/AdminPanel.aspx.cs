@@ -3,10 +3,12 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TIC_Web.Database;
 using TIC_Web.Models;
 
 namespace TIC_Web.Account
@@ -72,15 +74,39 @@ namespace TIC_Web.Account
             }
         }
 
-        protected void LoadAddContent(object sender, EventArgs e)
-        {
-            TextBox txt = new TextBox
-            {
-                ID = "testBox",
-                Text = "Test generated field."
-            };
+        protected void LoadDynContent(object sender, EventArgs e){
+            DatabaseManager dbm = new DatabaseManager();
+            string selectedTable = TableList.SelectedValue;
+            DataSet ds = dbm.GetColumnsForTable(selectedTable);
+            DataTable dt = new DataTable();
+            dt = ds.Tables[0];
+            List<string> columns = new List<string>();
 
-            Panel1.Controls.Add(txt);
+            foreach (DataRow drr in dt.Rows){
+                columns.Add(drr["COLUMN_NAME"].ToString());
+            }
+
+            for (int i = 0; i < columns.Count; i++) {
+
+                TextBox txt = new TextBox{
+                    ID = "box" + columns.ElementAt(i),
+                    CssClass = "form-control"
+                };
+
+                Label lab = new Label{
+                    ID = "lab" + columns.ElementAt(i),
+                    Text = columns.ElementAt(i),
+                    AssociatedControlID = "box" + columns.ElementAt(i),
+                    CssClass = "col-md-2 control-label"
+                };
+
+                Panel4.Controls.Add(new LiteralControl("<br />"));
+                Panel4.Controls.Add(lab);
+                Panel4.Controls.Add(txt);
+                
+                //UpdatePanel1.Update();
+            }
+
         }
 
         private void AddMove()
