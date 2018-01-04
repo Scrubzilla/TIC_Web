@@ -55,15 +55,16 @@
                                     <DynamicHoverStyle CssClass="menuDynamicHover" />
                                     <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
                                     <DynamicMenuStyle CssClass="menuDyn" />
+
                                     <Items>
                                         <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx?section=framedata"></asp:MenuItem>
-                                        <asp:MenuItem Text="Character Information" Value="Character Information" NavigateUrl="CharacterSelect.aspx?section=charinfo"></asp:MenuItem>
-                                        <asp:MenuItem Text="Guides" Value="Guides">
-                                            <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
-                                            <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>
-                                            <asp:MenuItem Text="Character" Value="Character"></asp:MenuItem>
+                                        <asp:MenuItem Text="Learning" Value="Learning">
+                                            <asp:MenuItem Text="Character Info" Value="Character Info" NavigateUrl="CharacterSelect.aspx?section=charinfo"></asp:MenuItem>
                                         </asp:MenuItem>
-                                        <asp:MenuItem Text="Ranks" Value="Ranks"></asp:MenuItem>
+                                        <asp:MenuItem Text="Social" Value="Social">
+                                            <asp:MenuItem Text="About" Value="About" NavigateUrl="About.aspx"></asp:MenuItem>
+                                        </asp:MenuItem>
+
                                     </Items>
 
                                     <StaticHoverStyle CssClass="mainStaticHover" />
@@ -85,29 +86,76 @@
                                     <DynamicMenuStyle CssClass="menuDyn" />
                                     <Items>
                                         <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx?section=framedata"></asp:MenuItem>
-                                        <asp:MenuItem Text="Character Information" Value="Character Information" NavigateUrl="CharacterSelect.aspx?section=charinfo"></asp:MenuItem>
-                                        <asp:MenuItem Text="Guides" Value="Guides">
-                                            <asp:MenuItem Text="Basic" Value="Basic"></asp:MenuItem>
-                                            <asp:MenuItem Text="Advanced" Value="Advanced"></asp:MenuItem>
-                                            <asp:MenuItem Text="Character" Value="Character"></asp:MenuItem>
+                                        <asp:MenuItem Text="Learning" Value="Learning">
+                                            <asp:MenuItem Text="Character Info" Value="Character Info" NavigateUrl="CharacterSelect.aspx?section=charinfo"></asp:MenuItem>
                                         </asp:MenuItem>
-                                        <asp:MenuItem Text="Ranks" Value="Ranks"></asp:MenuItem>
-                                        <asp:MenuItem Text="Statistics" Value="Statistics"></asp:MenuItem>
-                                        <asp:MenuItem Text="Notes" Value="Notes"></asp:MenuItem>
-                                    </Items>
+                                        <asp:MenuItem Text="Social" Value="Social">
+                                            <asp:MenuItem Text="About" Value="About" NavigateUrl="About.aspx"></asp:MenuItem>
+                                        </asp:MenuItem>
 
+                                    </Items>
                                     <StaticHoverStyle CssClass="mainStaticHover" />
                                     <StaticMenuItemStyle CssClass="menuStatItem" HorizontalPadding="12px" VerticalPadding="15px" />
                                     <StaticMenuStyle CssClass="mainStatic" />
                                 </asp:Menu>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/AdminPanel" title="Admin Panel">Admin Panel</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Account Management">Account Management</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Developer">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav">
+                                        <asp:Menu ID="anonMenu" runat="server" Orientation="Horizontal" StaticHoverStyle-CssClass="mainStaticHover" StaticMenuStyle-CssClass="mainStatic" DynamicHoverStyle-CssClass="menuDynamicHover" DynamicMenuStyle-CssClass="menuDyn" DynamicMenuItemStyle-CssClass="menuDynItem" StaticMenuItemStyle-CssClass="menuStatItem" StaticMenuItemStyle-HorizontalPadding="12px" StaticMenuItemStyle-VerticalPadding="15px">
+                                            <DynamicHoverStyle CssClass="menuDynamicHover" />
+                                            <DynamicMenuItemStyle CssClass="menuDynItem" VerticalPadding="5px" />
+                                            <DynamicMenuStyle CssClass="menuDyn" />
+                                            <Items>
+                                                <asp:MenuItem Text="Frame Data" Value="Frame Data" NavigateUrl="CharacterSelect.aspx?section=framedata"></asp:MenuItem>
+                                                <asp:MenuItem Text="Learning" Value="Learning">
+                                                    <asp:MenuItem Text="Character Info" Value="Character Info" NavigateUrl="CharacterSelect.aspx?section=charinfo"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Tutorials" Value="Tutorials">
+                                                        <asp:MenuItem Text="Basics" Value="Basics"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Specific" Value="Specific"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Character" Value="Character"></asp:MenuItem>
+                                                    </asp:MenuItem>
+                                                    <asp:MenuItem Text="Websites" Value="Websites"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Notes" Value="Notes"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Legend" Value="Legend"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Ranking" Value="Ranking">
+                                                    <asp:MenuItem Text="Ranks" Value="Ranks"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Statistics" Value="Statistics"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Tournaments" Value="Tournaments"></asp:MenuItem>
+                                                <asp:MenuItem Text="Social" Value="Social">
+                                                    <asp:MenuItem Text="About" Value="About" NavigateUrl="About.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Social Media" Value="Social Media"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                                <asp:MenuItem Text="Technical" Value="Technical">
+                                                    <asp:MenuItem Text="Changelog" Value="Changelog"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Download" Value="Download"></asp:MenuItem>
+                                                </asp:MenuItem>
+                                            </Items>
+                                            <StaticHoverStyle CssClass="mainStaticHover" />
+                                            <StaticMenuItemStyle CssClass="menuStatItem" HorizontalPadding="12px" VerticalPadding="15px" />
+                                            <StaticMenuStyle CssClass="mainStatic" />
+                                        </asp:Menu>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a runat="server" href="~/Account/Manage" title="Account Management">Account Management</a></li>
+                                        <li><a runat="server" href="~/Account/AdminPanel" title="Admin Panel">Admin Panel</a></li>
+                                        <li>
+                                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                        </li>
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
                     </asp:LoginView>
                 </div>
 
