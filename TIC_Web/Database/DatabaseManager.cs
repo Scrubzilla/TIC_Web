@@ -7,11 +7,60 @@ namespace TIC_Web.Database
 {
     public class DatabaseManager
     {
-        //Get all moves where a certain property matches the rquirements.
-        public DataSet GetNumSearchMoves(String character, String property, String sortCondition, bool specFrame, String searchValue)
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+
+        //Retrieve all moves from a search where numbers are compared and searched for.
+        public DataSet GetNumSearchMoves(string character, string property, string sortCondition, bool isSpecific, string inputValue){
+            string sortBy = "";
+            string baseCommand = "";
+
+            //Check how the user wants to sort the retrieved values, if null, leave blank and do not sort it.
+            if (sortCondition.Equals("Ascending")){
+                sortBy = "ORDER BY " + property + " ASC";
+            }
+            else if (sortCondition.Equals("Descending")){
+                sortBy = "ORDER BY " + property + " DESC";
+            }
+
+            //If the user searches for a specific value, only retrieve values with that value.
+            if (isSpecific == true){
+                baseCommand = "SELECT * FROM Moves WHERE CharacterName = @character AND " + property + " = @searchValue " + sortBy;
+            }
+            else{
+                //Convert search to int and check if it is negative or positive
+                int value = Int32.Parse(inputValue);
+
+                //Retrieve all values higher than search if the search is positive, if it is negative, retrieve all lesser values than the search.
+                if (value < 0){
+                    baseCommand = "SELECT * FROM Moves WHERE CharacterName = @character AND " + property + " <= @searchValue " + sortBy;
+                }
+                else if (value >= 0){
+                    baseCommand = "SELECT * FROM Moves WHERE CharacterName = @character AND " + property + " >= @searchValue " + sortBy;
+                }
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString)){
+                SqlCommand command = new SqlCommand(baseCommand, conn);
+                command.Parameters.AddWithValue("@character", character);
+                command.Parameters.AddWithValue("@searchValue", inputValue);
+
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                conn.Close();
+
+                return ds;
+            }
+        }
+
+        //Retrieve all moves from a search where text is mainly compared and searched for.
+        public DataSet GetTextMoveSearch(string character, string property, string sortCondition, bool isSpecific, string inputValue)
         {
             string sortBy = "";
+            string baseCommand = "";
 
+            //Check how the user wants to sort the retrieved values, if null, leave blank and do not sort it.
             if (sortCondition.Equals("Ascending"))
             {
                 sortBy = "ORDER BY " + property + " ASC";
@@ -21,92 +70,51 @@ namespace TIC_Web.Database
                 sortBy = "ORDER BY " + property + " DESC";
             }
 
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
-            conn.Open();
-            SqlDataAdapter adapter = null;
-            
-            if (specFrame == true){
-                adapter = new SqlDataAdapter("SELECT * FROM moves WHERE CharacterName = '" + character + "' AND " + property + " = '" + searchValue + "' " + sortBy, conn);
-            } else{
-                int value = Int32.Parse(searchValue);
+            if (isSpecific == true) {
+                baseCommand = "SELECT * FROM Moves WHERE CharacterName = @character AND " + property + " = @searchValue " + sortBy;
 
-                if (value < 0){
-                    adapter = new SqlDataAdapter("SELECT * FROM moves WHERE CharacterName = '" + character + "' AND " + property + " <= '" + searchValue + "' " + sortBy, conn);
-                } else if (value >= 0){
-                    adapter = new SqlDataAdapter("SELECT * FROM moves WHERE CharacterName = '" + character + "' AND " + property + " >= '" + searchValue + "' " + sortBy, conn);
-                }
+            } else {
+                baseCommand = "SELECT * FROM Moves WHERE CharacterName = @character AND " + property + " LIKE '%' + @searchValue + '%' " + sortBy;
             }
 
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            conn.Close();
-
-            return ds;
-        }
-
-        public DataSet TestMethod(String character, String property, String sortCondition, bool specFrame, String searchValue) {
-
-            String command = "SELECT * FROM moves WHERE CharacterName = @charName";
-            String connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
-
             using (SqlConnection conn = new SqlConnection(connectionString)){
-                SqlCommand cmd = new SqlCommand(command, conn);
-                cmd.Parameters.AddWithValue("@charName", character);
+                SqlCommand command = new SqlCommand(baseCommand, conn);
+                command.Parameters.AddWithValue("@character", character);
+                command.Parameters.AddWithValue("@searchValue", inputValue);
 
                 conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 conn.Close();
 
                 return ds;
-
             }
-        }
-
-        public DataSet GetTextMoveSearch(String character, String property, String sortCondition, bool specFrame, String searchValue){
-            string sortBy = "";
-
-            if (sortCondition.Equals("Ascending")){
-                sortBy = "ORDER BY " + property + " ASC";
-            }
-            else if (sortCondition.Equals("Descending")){
-                sortBy = "ORDER BY " + property + " DESC";
-            }
-
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
-            conn.Open();
-            SqlDataAdapter adapter = null;
-
-            if (specFrame == true){
-                adapter = new SqlDataAdapter("SELECT * FROM Moves WHERE CharacterName = '" + character + "' AND " + property + " = '" + searchValue + "' " + sortBy, conn);
-            }
-            else{
-                adapter = new SqlDataAdapter("SELECT * FROM Moves WHERE CharacterName = '" + character + "' AND " + property + " LIKE '%" + searchValue + "%' " + sortBy, conn);
-            }
-
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            conn.Close();
-
-            return ds;
+            
         }
 
         //Get all of the moves and the moves attributes for a character
-        public DataSet GetAllMovesForCharacter(String character){
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
-            conn.Open();
+        public DataSet GetAllMovesForCharacter(String character)
+        {
+            string baseCommand = "SELECT Command, HitLevel, Damage, StartUpFrameDisplay, BlockFrameDisplay, HitFrameDisplay, CHFrameDisplay FROM Moves WHERE CharacterName = @character";
 
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Command, HitLevel, Damage, StartUpFrameDisplay, BlockFrameDisplay, HitFrameDisplay, CHFrameDisplay FROM Moves WHERE CharacterName='" + character + "'", conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            conn.Close();
+            using (SqlConnection conn = new SqlConnection(connectionString)){
+                SqlCommand command = new SqlCommand(baseCommand, conn);
+                command.Parameters.AddWithValue("@character", character);
 
-            return ds;
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                conn.Close();
+
+                return ds;
+            }
         }
 
         //Get a single columns from the character table.
-        public DataSet GetAttrForCharacter(String attribute, String character){
+        public DataSet GetAttrForCharacter(String attribute, String character)
+        {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
             conn.Open();
 
@@ -119,12 +127,14 @@ namespace TIC_Web.Database
         }
 
         //Get multiple columns from the character table.
-        public DataSet GetMultipleAttrForCharacter(String[] attributes, String character){
+        public DataSet GetMultipleAttrForCharacter(String[] attributes, String character)
+        {
 
             System.Diagnostics.Debug.WriteLine("Test");
             String cmdAttributes = "";
 
-            for (int i = 0; i < attributes.Length; i++){
+            for (int i = 0; i < attributes.Length; i++)
+            {
                 if (i == 0)
                 {
                     cmdAttributes = attributes[i];
@@ -148,7 +158,8 @@ namespace TIC_Web.Database
             return ds;
         }
 
-        public DataSet GetColumnsForTable(string tableName){
+        public DataSet GetColumnsForTable(string tableName)
+        {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
             conn.Open();
 

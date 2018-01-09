@@ -114,65 +114,31 @@ namespace TIC_Web
         }
 
         protected void ValidationOfSearch(object source, ServerValidateEventArgs args) {
-            System.Diagnostics.Debug.WriteLine("1");
             if (movePropertyList.SelectedValue.Equals("TotalDamage")){
                 //Only allow numbers and the max length is 3.
-                System.Diagnostics.Debug.WriteLine("2");
                 string strRegex = @"^([0-9]){0,3}$";
-                CustomValidator1.ErrorMessage = "When searching for damage, remember to: \n*Only use numbers \n*Be below the character limit 3.";
+                searchValidator.ErrorMessage = "When searching for damage, remember to: <br>*Only use numbers <br>*Be below the character limit 3.";
                 Regex regex = new Regex(strRegex);
-                System.Diagnostics.Debug.WriteLine("3");
                 args.IsValid = regex.IsMatch(args.Value);
-                System.Diagnostics.Debug.WriteLine("4");
             }
             else {
                 string strRegex = "";
-                System.Diagnostics.Debug.WriteLine("5");
+                string property = movePropertyList.SelectedValue;
+
                 //If the fields command or hitlevel are selected, max length is 15 otherwise length is 8.
-                if (movePropertyList.SelectedValue.Equals("Command") || movePropertyList.SelectedValue.Equals("HitLevel")){
-                    strRegex = @"^([A-Za-z0-9\,\.\-\+\~\(\)\[\]\!\*\?]){0,15}$";
-                    CustomValidator1.ErrorMessage = "When searching, you can only use: \n*Letters, numbers and certain special characters. \n*Length must be 15 or below.";
-                    System.Diagnostics.Debug.WriteLine("6");
+                if (property.Equals("Command") || property.Equals("HitLevel")){
+                    strRegex = @"^([A-Za-z0-9\,\.\-\+\~\(\)\[\]\!\*\?\s]){0,15}$";
+                    searchValidator.ErrorMessage = "When searching, you can only use: <br>*Letters, numbers and certain special characters. <br>*Length must be 15 or below.";
                 }
                 else {
-                    System.Diagnostics.Debug.WriteLine("7");
-                    strRegex = @"^([A-Za-z0-9\,\.\-\+\~\(\)\[\]\!\*\?]){0,8}$";
-                    CustomValidator1.ErrorMessage = "When searching, you can only use: \n*Letters, numbers and certain special characters. \n*Length must be 8 or below.";
-                    System.Diagnostics.Debug.WriteLine("8");
+                    strRegex = @"^([A-Za-z0-9\,\.\-\+\~\(\)\[\]\!\*\?\s]){0,8}$";
+                    searchValidator.ErrorMessage = "When searching, you can only use: <br>*Letters, numbers and certain special characters. <br>*Length must be 8 or below.";
                 }
-                System.Diagnostics.Debug.WriteLine("9");
+
                 Regex regex = new Regex(strRegex);
                 args.IsValid = regex.IsMatch(args.Value);
-                System.Diagnostics.Debug.WriteLine("10");
             }
         }
 
     }
 }
-
-//Add tekken vocab for certain search conditions
-//Add damage search
-//add numbers to command/hitlevel search
-
-
-
-/*
-if (movePropertyList.SelectedValue.Equals("StartUpFrameCalc") || movePropertyList.SelectedValue.Equals("BlockFrameCalc") || movePropertyList.SelectedValue.Equals("HitFrameCalc") || movePropertyList.SelectedValue.Equals("CHFrameCalc")) {
-string strRegex = @"^[\-,\+,0-9][0-9]*$";
-CustomValidator1.ErrorMessage = "You can only use numbers and -/+ in the first space!";
-Regex regex = new Regex(strRegex);
-args.IsValid = regex.IsMatch(args.Value);
-}
-else {
-string strRegex = @"([A-Za-z,])+";
-CustomValidator1.ErrorMessage = "Only use letters please!";
-Regex regex = new Regex(strRegex);
-args.IsValid = regex.IsMatch(args.Value);
-}
-
-bool test = int.TryParse("", out int num);
-
-if(test == true) {
-Console.WriteLine(num);
-}
-*/

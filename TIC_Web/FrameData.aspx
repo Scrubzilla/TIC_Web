@@ -30,8 +30,7 @@
         <asp:TextBox ID="searchField" runat="server" KeyDown="SearchFieldKeyDown" CssClass="smallPadding"></asp:TextBox>
         <asp:Button ID="SearchBtn" runat="server" Text="Search" OnClick="RefreshMoves" CssClass="searchBtn" />
         <br />
-       <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Something went wrong.." ControlToValidate="searchField" OnServerValidate="ValidationOfSearch"></asp:CustomValidator>
-        
+        <asp:CustomValidator ID="searchValidator" runat="server" ErrorMessage="Something went wrong.." ControlToValidate="searchField" OnServerValidate="ValidationOfSearch" CssClass="text-danger"></asp:CustomValidator>
         <br />
     </asp:Panel>
     <div>
