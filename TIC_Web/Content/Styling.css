@@ -11,14 +11,14 @@ label {
     font-family: Georgia;
 }
 
-.mainStatic a:focus {
-    outline: 0;
-}
+    .mainStatic a:focus {
+        outline: 0;
+    }
 
-.mainStatic a:hover {
-    color: white;
-    border: 0;
-}
+    .mainStatic a:hover {
+        color: white;
+        border: 0;
+    }
 
 .menuStatItem {
     color: #D9D9D9;
@@ -43,9 +43,9 @@ label {
     color: #D9D9D9 !important;
 }
 
-.nav.navbar-nav.navbar-right li a:hover {
-    color: white !important;
-}
+    .nav.navbar-nav.navbar-right li a:hover {
+        color: white !important;
+    }
 
 .navbar {
     background-color: #141414;
@@ -74,14 +74,14 @@ p {
     margin-bottom: 5px;
 }
 
-.imageRow .unknownImage {
-    padding: 0;
-}
+    .imageRow .unknownImage {
+        padding: 0;
+    }
 
 
-.imageRow .charPortrait:focus {
-    outline: 0;
-}
+    .imageRow .charPortrait:focus {
+        outline: 0;
+    }
 
 .moveLabel {
     margin-right: 100px;
@@ -92,25 +92,25 @@ p {
     color: #D9D9D9;
 }
 
-.custLinkButton:focus {
-    outline: 0;
-}
+    .custLinkButton:focus {
+        outline: 0;
+    }
 
-.custLinkButton:hover {
-    color: white;
-}
+    .custLinkButton:hover {
+        color: white;
+    }
 
 input[type=text] {
     width: 200px;
     background-color: #121212;
     border-color: #D9D9D9;
     color: #D9D9D9;
-    border-width:1px;
+    border-width: 1px;
 }
 
-input[type=text]:focus {
-    outline: 0;
-}
+    input[type=text]:focus {
+        outline: 0;
+    }
 
 select {
     background-color: #121212;
@@ -119,62 +119,62 @@ select {
     border-width: 1px;
 }
 
-select:focus {
-    outline: 0;
-}
+    select:focus {
+        outline: 0;
+    }
 
 .searchBtn {
     background-color: #121212;
     border-color: #D9D9D9;
     color: #D9D9D9;
     border-width: 1px;
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 .smallPadding {
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 .largePadding {
-    margin-left:50px;
+    margin-left: 50px;
 }
 
 .charInfoRight {
     float: right;
-    width:87%;
+    width: 87%;
 }
 
 .charInfoLeft {
     float: left;
     width: 12%;
-    margin-top:25px;
+    margin-top: 25px;
 }
 
 .charInfoContent {
-    margin-top:45px;
+    margin-top: 45px;
     background: red;
 }
 
 .charInfoDesc {
-    height:80px;
+    height: 80px;
 }
 
 .charInfoMenu {
     margin-top: 40px;
-    background:red;
+    background: red;
 }
 
 .charInfoBotSpacing {
-    margin-top:600px;
+    margin-top: 600px;
 }
 
 .extra-margin {
-    margin-bottom:5px;
+    margin-bottom: 5px;
 }
 
 .center_div {
     margin: 0 auto;
-    width:100%;
+    width: 100%;
 }
 
 .width {
@@ -187,24 +187,24 @@ select:focus {
     border-color: #D9D9D9;
 }
 
-.modBootBtn:hover {
-    background-color: #1C1C1C;
-    color: white;
-}
+    .modBootBtn:hover {
+        background-color: #1C1C1C;
+        color: white;
+    }
 
-.modBootBtn:focus {
-    outline: 0;
-    color: #D9D9D9;
-}
+    .modBootBtn:focus {
+        outline: 0;
+        color: #D9D9D9;
+    }
 
-.modBootBtn:focus:hover {
-    color: white;
-    background-color: #1C1C1C;
-}
+        .modBootBtn:focus:hover {
+            color: white;
+            background-color: #1C1C1C;
+        }
 
 input[type=checkbox] {
     position: relative;
-    top:1px;
+    top: 1px;
 }
 
 .top {
@@ -213,16 +213,14 @@ input[type=checkbox] {
 }
 
 .left {
-    font-size:1px;
+    font-size: 1px;
     float: left;
     width: 400px;
 }
 
 .center {
-
     float: left;
     width: 400px;
-
 }
 
 .right {
@@ -239,9 +237,70 @@ input[type=checkbox] {
 .myTable {
     table-layout: fixed;
     width: 100%;
-   
 }
 
 .cellContent {
     padding-left: 5px;
+}
+
+.frontPageRight {
+    float: right;
+    width: 50%;
+    margin-top: 25px;
+    height: 276px;
+}
+
+.frontPageLeft {
+    float: left;
+    width: 50%;
+    height: 276px;
+    margin-top: 25px;
+}
+
+.frontPageSmallImage {
+    height: auto;
+    width: auto;
+    max-width: 570px;
+    max-height: 130px;
+    margin-left: 10px;
+    border: 1px solid black;
+}
+
+.frontPageSmallImage:hover {
+    border: 1px solid #D9D9D9;
+}
+
+.frontPageSmallImage2 {
+    height: auto;
+    width: auto;
+    max-width: 570px;
+    max-height: 130px;
+    margin-left: 10px;
+    margin-top: 11px;
+    border: 1px solid black;
+}
+
+.frontPageSmallImage2:hover {
+    border: 1px solid #D9D9D9;
+}
+
+.frontPageBigImage {
+    height: auto;
+    width: auto;
+    max-width: 570px;
+    max-height: 276px;
+    border: 1px solid black;
+}
+
+.frontPageBigImage:hover {
+    height: auto;
+    width: auto;
+    max-width: 570px;
+    max-height: 276px;
+    border: 1px solid #D9D9D9;
+}
+
+
+.frontPageText {
+    margin-top:350px;
 }

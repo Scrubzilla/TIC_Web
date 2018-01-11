@@ -34,8 +34,6 @@ namespace TIC_Web
                 bool isSpecific = specFrame.Checked;
                 string searchText = searchField.Text;
 
-                System.Diagnostics.Debug.WriteLine(searchText + " - length -" + searchText.Length);
-
                 if (searchText.Length != 0){
                     if (property.Equals("Command") || property.Equals("HitLevel")){
                         DatabaseManager dbm = new DatabaseManager();

@@ -289,7 +289,13 @@
     <Content Include="Images\CharacterPortraits\xiaoyu_on.png" />
     <Content Include="Images\CharacterPortraits\yoshimitsu_off.png" />
     <Content Include="Images\CharacterPortraits\yoshimitsu_on.png" />
+    <Content Include="Images\System\FrameDataOff.png" />
+    <Content Include="Images\System\FrameDataOn.png" />
+    <Content Include="Images\System\LearningOff.png" />
+    <Content Include="Images\System\LearningOn.png" />
     <Content Include="Images\System\Logo.png" />
+    <Content Include="Images\System\StatisticsOff.png" />
+    <Content Include="Images\System\StatisticsOn.png" />
     <Content Include="MoveInformation.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
